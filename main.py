@@ -15,18 +15,18 @@ def sign_up():
 
     # Check if passwords match
     if password != confirm:
-        print("❌ Passwords do not match!")
+        print(" Passwords do not match!")
         return
 
     # Strong password rules
     if not any(c.islower() for c in password):
-        print("❌ Password must contain at least one lowercase letter")
+        print(" Password must contain at least one lowercase letter")
         return
     if not any(c.isupper() for c in password):
-        print("❌ Password must contain at least one uppercase letter")
+        print(" Password must contain at least one uppercase letter")
         return
     if len(password) < 8:
-        print("❌ Password must be at least 8 characters long")
+        print(" Password must be at least 8 characters long")
         return
 
     # Save user data in file
@@ -35,7 +35,7 @@ def sign_up():
     file.write(password)
     file.close()
 
-    print("✔ Account created successfully!")
+    print(" Account created successfully!")
 
 
 def login():
@@ -43,7 +43,7 @@ def login():
 
     # Check if file exists
     if not os.path.exists("login.txt"):
-        print("❌ No account found! Please Sign Up first.")
+        print(" No account found! Please Sign Up first.")
         return
 
     # Read saved credentials
@@ -83,8 +83,9 @@ def main_menu():
             print("👋 Goodbye!")
             break
         else:
-            print("❌ Invalid Option! Try Again.")
+            print(" Invalid Option! Try Again.")
 
 
 # Run program
 main_menu()
+
